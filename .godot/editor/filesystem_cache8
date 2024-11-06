@@ -1,0 +1,109 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1730862903
+icon.svg::CompressedTexture2D::239443041487505548::1730862003::1730862008::1::::<><>::
+::res://Assets/::1730862838
+::res://Assets/font/::1730862845
+README.md::TextFile::-1::1675039368::0::1::::<><>::
+ZX Palm Bold.png::CompressedTexture2D::4803043050477608015::1723580437::1730862845::1::::<><>::
+ZX Palm.png::CompressedTexture2D::1941475848683420358::1723580437::1730862845::1::::<><>::
+::res://Assets/font/Atari8/::1730862845
+ZX Palm Bold.fnt::FontFile::5578536531562167769::1723580440::1730862845::1::::<><>::
+ZX Palm.fnt::FontFile::963985494970094807::1723580440::1730862845::1::::<><>::
+::res://Assets/font/BBC/::1730862815
+::res://Assets/font/C64/::1730862815
+::res://Assets/font/CoCo/::1730862815
+::res://Assets/font/CPC/::1730862815
+::res://Assets/font/GameBoy/::1730862845
+ZX Palm Bold-dark.json::JSON::-1::1723580440::0::1::::<><>::
+ZX Palm Bold-dark.png::CompressedTexture2D::291636575077620748::1723580440::1730862845::1::::<><>::
+ZX Palm Bold-var.json::JSON::-1::1723580440::0::1::::<><>::
+ZX Palm Bold-var.png::CompressedTexture2D::6471703367542924827::1723580440::1730862845::1::::<><>::
+ZX Palm Bold.json::JSON::-1::1723580440::0::1::::<><>::
+ZX Palm Bold.png::CompressedTexture2D::4803397860393811920::1723580440::1730862845::1::::<><>::
+ZX Palm-dark.json::JSON::-1::1723580440::0::1::::<><>::
+ZX Palm-dark.png::CompressedTexture2D::7230598303905056096::1723580440::1730862845::1::::<><>::
+ZX Palm-var.json::JSON::-1::1723580440::0::1::::<><>::
+ZX Palm-var.png::CompressedTexture2D::8491295974188205186::1723580440::1730862845::1::::<><>::
+ZX Palm.json::JSON::-1::1723580440::0::1::::<><>::
+ZX Palm.png::CompressedTexture2D::1644471754963762865::1723580440::1730862845::1::::<><>::
+::res://Assets/font/PC/::1730862845
+ZX Palm Bold.ttf::FontFile::5800221888210108472::1566210807::1730862845::1::::<><>::
+ZX Palm Bold.woff::FontFile::3444854799774969369::1660756384::1730862845::1::::<><>::
+ZX Palm Bold.woff2::FontFile::8832073417404459::1660756383::1730862845::1::::<><>::
+ZX Palm.ttf::FontFile::2946154085902415643::1566210795::1730862845::1::::<><>::
+ZX Palm.woff::FontFile::3499300423696362351::1660756386::1730862845::1::::<><>::
+ZX Palm.woff2::FontFile::4212442456726731890::1660756384::1730862845::1::::<><>::
+::res://Assets/font/Source/::1730862815
+::res://Assets/font/Spectrum/::1730862815
+::res://Assets/font/Web/::1730862845
+ZX Palm Bold.woff::FontFile::2393251624169457243::1723580441::1730862845::1::::<><>::
+ZX Palm Bold.woff2::FontFile::3412171964872709709::1723580440::1730862845::1::::<><>::
+ZX Palm.woff::FontFile::6754882665682550925::1723580441::1730862845::1::::<><>::
+ZX Palm.woff2::FontFile::5361196488569024998::1723580440::1730862845::1::::<><>::
+::res://Assets/game/::1730862469
+::res://Assets/game/Characters/::1730862601
+Basic_Charakter_Actions.png::CompressedTexture2D::8426963057149697125::1730862469::1730862573::1::::<><>::
+Basic_Charakter_Spritesheet.png::CompressedTexture2D::8404707298608332621::1730862469::1730862585::1::::<><>::
+Egg_And_Nest.png::CompressedTexture2D::552994115763207708::1730862469::1730862469::1::::<><>::
+Free_Chicken_Sprites.png::CompressedTexture2D::7877520240310916444::1730862469::1730862594::1::::<><>::
+Free_Cow_Sprites.png::CompressedTexture2D::1987253097198656545::1730862469::1730862601::1::::<><>::
+Tools.png::CompressedTexture2D::345710876389501740::1730862469::1730862469::1::::<><>::
+::res://Assets/game/Objects/::1730862469
+Basic_Furniture.png::CompressedTexture2D::1616086603436032364::1730862469::1730862469::1::::<><>::
+Basic_Grass_Biom_things.png::CompressedTexture2D::4618338657622173811::1730862469::1730862469::1::::<><>::
+Basic_Plants.png::CompressedTexture2D::4745954327403960725::1730862469::1730862469::1::::<><>::
+Basic_tools_and_meterials.png::CompressedTexture2D::2036357448597302914::1730862469::1730862469::1::::<><>::
+Chest.png::CompressedTexture2D::5091699994819364609::1730862469::1730862469::1::::<><>::
+Egg_item.png::CompressedTexture2D::8497667776904551471::1730862469::1730862469::1::::<><>::
+Free_Chicken_House.png::CompressedTexture2D::265506036528172010::1730862469::1730862469::1::::<><>::
+Paths.png::CompressedTexture2D::7176745794029666885::1730862469::1730862469::1::::<><>::
+Simple_Milk_and_grass_item.png::CompressedTexture2D::4903180749123307086::1730862469::1730862469::1::::<><>::
+Wood_Bridge.png::CompressedTexture2D::8836761258569739252::1730862469::1730862469::1::::<><>::
+::res://Assets/game/Tilesets/::1730862719
+Bitmask_references 1.png::CompressedTexture2D::3646035492568569105::1730862469::1730862617::1::::<><>::
+Bitmask_references 2.png::CompressedTexture2D::7609489061499175907::1730862469::1730862623::1::::<><>::
+Fences.png::CompressedTexture2D::5324342955484502138::1730862469::1730862469::1::::<><>::
+Grass.png::CompressedTexture2D::3480845375050031219::1730862469::1730862469::1::::<><>::
+Hills.png::CompressedTexture2D::3638571748247076401::1730862469::1730862469::1::::<><>::
+Tilled_Dirt.png::CompressedTexture2D::1903810065624330533::1730862469::1730862469::1::::<><>::
+Water.png::CompressedTexture2D::8331872315668462766::1730862469::1730862469::1::::<><>::
+Wooden_House.png::CompressedTexture2D::7547465392662687722::1730862469::1730862630::1::::<><>::
+::res://Assets/music/::1730862845
+On the Farm.wav::AudioStreamWAV::1307701932593312253::1730799476::1730862845::1::::<><>::
+::res://Assets/UI/::1730862726
+Setting menu.png::CompressedTexture2D::7935102407756077969::1730862684::1730862726::1::::<><>::
+Sprite sheet for Basic Pack.png::CompressedTexture2D::7551063922642046194::1730862684::1730862726::1::::<><>::
+UI Big Play Button.png::CompressedTexture2D::7718294694380458190::1730862684::1730862726::1::::<><>::
+UI Settings Buttons.png::CompressedTexture2D::1995350723816750206::1730862684::1730862726::1::::<><>::
+::res://Assets/UI/buttons/::1730862726
+Small Square Buttons.png::CompressedTexture2D::2337369589782239755::1730862684::1730862726::1::::<><>::
+Square Buttons 19x26.png::CompressedTexture2D::3720527489869129249::1730862684::1730862726::1::::<><>::
+Square Buttons 26x19.png::CompressedTexture2D::7508685674586518414::1730862684::1730862726::1::::<><>::
+Square Buttons 26x26.png::CompressedTexture2D::586995585794172260::1730862684::1730862726::1::::<><>::
+::res://Assets/UI/Dialouge UI/::1730862726
+dialog box big.png::CompressedTexture2D::78246389676868239::1730862684::1730862726::1::::<><>::
+dialog box character finished talking click to continue indicator - spritesheet .png::CompressedTexture2D::3538911079896197317::1730862684::1730862726::1::::<><>::
+dialog box medium.png::CompressedTexture2D::2860778321275266271::1730862684::1730862726::1::::<><>::
+dialog box small.png::CompressedTexture2D::7442656871738428934::1730862684::1730862726::1::::<><>::
+dialog box.png::CompressedTexture2D::2479288409732121147::1730862684::1730862726::1::::<><>::
+Premade dialog box  big.png::CompressedTexture2D::7721958054279058436::1730862684::1730862726::1::::<><>::
+Premade dialog box medium.png::CompressedTexture2D::9033183332163301399::1730862684::1730862726::1::::<><>::
+Premade dialog box small.png::CompressedTexture2D::2524760312113919003::1730862684::1730862726::1::::<><>::
+::res://Assets/UI/Dialouge UI/Emotes/::1730862726
+Teemo Basic emote animations sprite sheet.png::CompressedTexture2D::8835332501255183002::1730862684::1730862726::1::::<><>::
+::res://Assets/UI/Icons/::1730862726
+All Icons.png::CompressedTexture2D::8158043347629570356::1730862684::1730862726::1::::<><>::
+white icons.png::CompressedTexture2D::6916763617649497582::1730862684::1730862726::1::::<><>::
+::res://Assets/UI/Icons/special icons/::1730862726
+Small Happines-Sadness icons.png::CompressedTexture2D::7465377941402800995::1730862684::1730862726::1::::<><>::
+Special Icons.png::CompressedTexture2D::7104227219882384185::1730862684::1730862726::1::::<><>::
+::res://Assets/UI/Mouse sprites/::1730862726
+Catpaw holding Mouse icon.png::CompressedTexture2D::403626406828298522::1730862684::1730862726::1::::<><>::
+Catpaw Mouse icon.png::CompressedTexture2D::7112682853769549797::1730862684::1730862726::1::::<><>::
+Catpaw pointing Mouse icon.png::CompressedTexture2D::9042035584680595806::1730862684::1730862726::1::::<><>::
+Triangle Mouse icon 1.png::CompressedTexture2D::1234101470979897409::1730862684::1730862726::1::::<><>::
+Triangle Mouse icon 2.png::CompressedTexture2D::4427658867600392311::1730862684::1730862726::1::::<><>::
+Triangle Mouse icon 3.png::CompressedTexture2D::4214326877668994329::1730862684::1730862726::1::::<><>::
+::res://Scenes/::1730863736
+::res://Scenes/test/::1730863736
+::res://Scripts/::1730862903
