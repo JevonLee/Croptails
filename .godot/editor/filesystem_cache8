@@ -1,6 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1730862903
+::res://::1731160867
 icon.svg::CompressedTexture2D::239443041487505548::1730862003::1730862008::1::::<><>::
+README.md::TextFile::-1::1730870106::0::1::::<><>::
 ::res://Assets/::1730862838
 ::res://Assets/font/::1730862845
 README.md::TextFile::-1::1675039368::0::1::::<><>::
@@ -59,15 +60,17 @@ Free_Chicken_House.png::CompressedTexture2D::265506036528172010::1730862469::173
 Paths.png::CompressedTexture2D::7176745794029666885::1730862469::1730862469::1::::<><>::
 Simple_Milk_and_grass_item.png::CompressedTexture2D::4903180749123307086::1730862469::1730862469::1::::<><>::
 Wood_Bridge.png::CompressedTexture2D::8836761258569739252::1730862469::1730862469::1::::<><>::
-::res://Assets/game/Tilesets/::1730862719
+::res://Assets/game/Tilesets/::1731157010
 Bitmask_references 1.png::CompressedTexture2D::3646035492568569105::1730862469::1730862617::1::::<><>::
 Bitmask_references 2.png::CompressedTexture2D::7609489061499175907::1730862469::1730862623::1::::<><>::
+Doors.png::CompressedTexture2D::4153997309422633730::1721541166::1731157010::1::::<><>::
 Fences.png::CompressedTexture2D::5324342955484502138::1730862469::1730862469::1::::<><>::
 Grass.png::CompressedTexture2D::3480845375050031219::1730862469::1730862469::1::::<><>::
 Hills.png::CompressedTexture2D::3638571748247076401::1730862469::1730862469::1::::<><>::
 Tilled_Dirt.png::CompressedTexture2D::1903810065624330533::1730862469::1730862469::1::::<><>::
 Water.png::CompressedTexture2D::8331872315668462766::1730862469::1730862469::1::::<><>::
-Wooden_House.png::CompressedTexture2D::7547465392662687722::1730862469::1730862630::1::::<><>::
+Wooden_House_Roof_Tilset.png::CompressedTexture2D::1177748506679057251::1721540844::1731157010::1::::<><>::
+Wooden_House_Walls_Tilset.png::CompressedTexture2D::3680853171400178668::1721113388::1731157010::1::::<><>::
 ::res://Assets/music/::1730862845
 On the Farm.wav::AudioStreamWAV::1307701932593312253::1730799476::1730862845::1::::<><>::
 ::res://Assets/UI/::1730862726
@@ -104,6 +107,38 @@ Catpaw pointing Mouse icon.png::CompressedTexture2D::9042035584680595806::173086
 Triangle Mouse icon 1.png::CompressedTexture2D::1234101470979897409::1730862684::1730862726::1::::<><>::
 Triangle Mouse icon 2.png::CompressedTexture2D::4427658867600392311::1730862684::1730862726::1::::<><>::
 Triangle Mouse icon 3.png::CompressedTexture2D::4214326877668994329::1730862684::1730862726::1::::<><>::
-::res://Scenes/::1730863736
-::res://Scenes/test/::1730863736
-::res://Scripts/::1730862903
+::res://Scenes/::1731146298
+::res://Scenes/characters/::1731076614
+::res://Scenes/characters/player/::1731164160
+chopping_state.gd::GDScript::-1::1731136300::0::1::::<>NodeState<>::
+idle_state.gd::GDScript::-1::1731131177::0::1::::<>NodeState<>::
+player.gd::GDScript::-1::1731159858::0::1::::Player<>CharacterBody2D<>::
+player.tscn::PackedScene::1718932211617022273::1731164160::0::1::::<><>::uid://dscc36aocfbvp::::res://Assets/game/Characters/Basic_Charakter_Actions.png<>res://Scenes/characters/player/player.gd<>uid://dr0kkii6h5cph::::res://Assets/game/Characters/Basic_Charakter_Spritesheet.png<>res://Scripts/state_machine/idle_state.gd<>res://Scripts/state_machine/node_state_machine.gd<>res://Scripts/state_machine/walk_state.gd<>res://Scenes/characters/player/chopping_state.gd<>res://Scenes/characters/player/tilling_state.gd<>res://Scenes/characters/player/watering_state.gd
+tilling_state.gd::GDScript::-1::1731136649::0::1::::<>NodeState<>::
+walk_state.gd::GDScript::-1::1731130684::0::1::::<>NodeState<>::
+watering_state.gd::GDScript::-1::1731136670::0::1::::<>NodeState<>::
+::res://Scenes/components/::1731164160
+InteractableComponent.tscn::PackedScene::2021310073714462467::1731164160::0::1::::<><>::res://Scenes/components/interactable_component.gd
+interactable_component.gd::GDScript::-1::1731162090::0::1::::InteractableComponent<>Area2D<>::
+::res://Scenes/houses/::1731164455
+door.tscn::PackedScene::5187020184343379955::1731164160::0::1::::<><>::uid://b0ghy1p7nurao::::res://Assets/game/Tilesets/Doors.png<>res://Scenes/houses/door.gd<>uid://32exf6qt06cl::::res://Scenes/components/InteractableComponent.tscn
+large_house.tscn::PackedScene::934888478858881109::1731164160::0::1::::<><>::uid://dv38mriqps28b::::res://Tilesets/house_tile_set.tres
+door.gd::GDScript::-1::1731164455::0::1::::<>StaticBody2D<>::
+small_house.tscn::PackedScene::5781621514865467512::1731164493::0::1::::<><>::uid://dv38mriqps28b::::res://Tilesets/house_tile_set.tres
+::res://Scenes/test/::1731164455
+test_scene_default.tscn::PackedScene::7560182420791466704::1731076627::0::1::::<><>::uid://bw1bjivgj2dx3::::res://Tilesets/game_tile_set.tres
+test_scene_player.tscn::PackedScene::8177709470073754577::1731164455::0::1::::<><>::uid://bw1bjivgj2dx3::::res://Tilesets/game_tile_set.tres<>uid://yqwteea6e2jt::::res://Scenes/characters/player/player.tscn
+test_scene_tilemap.tscn::PackedScene::4978773661871392881::1731164160::0::1::::<><>::uid://bw1bjivgj2dx3::::res://Tilesets/game_tile_set.tres
+::res://Scripts/::1731136211
+game_input_event.gd::GDScript::-1::1731136211::0::1::::GameInputEvents<>RefCounted<>::
+::res://Scripts/globals/::1731135232
+date_types.gd::GDScript::-1::1731135232::0::1::::DataTypes<>RefCounted<>::
+::res://Scripts/state_machine/::1731136718
+idle_state.gd::GDScript::-1::1731136718::0::1::::<>NodeState<>::
+node_state.gd::GDScript::-1::1731134739::0::1::::NodeState<>Node<>::
+node_state_machine.gd::GDScript::-1::1731133443::0::1::::NodeStateMachine<>Node<>::
+player.gd::GDScript::-1::1731135252::0::1::::Player<>CharacterBody2D<>::
+walk_state.gd::GDScript::-1::1731133785::0::1::::<>NodeState<>::
+::res://Tilesets/::1731160867
+game_tile_set.tres::TileSet::3984326307386677150::1731160147::0::1::::<><>::uid://dqyayqas3qcxy::::res://Assets/game/Tilesets/Water.png<>uid://bpufarcqu4s88::::res://Assets/game/Tilesets/Grass.png<>uid://2ehqdrt0yuc8::::res://Assets/game/Tilesets/Tilled_Dirt.png<>uid://b62fmltehnspv::::res://Assets/game/Objects/Basic_Grass_Biom_things.png<>uid://nk4qhatdk1lx::::res://Scenes/houses/large_house.tscn
+house_tile_set.tres::TileSet::8693056340882948431::1731160867::0::1::::<><>::uid://dfsbwgcy56dta::::res://Assets/game/Tilesets/Wooden_House.png<>uid://bspbd4y3jle1a::::res://Assets/game/Tilesets/Wooden_House_Walls_Tilset.png<>uid://xa3yfbqqfh8g::::res://Assets/game/Objects/Basic_Furniture.png<>uid://cf5vp2c0yntex::::res://Scenes/houses/door.tscn

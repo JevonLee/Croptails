@@ -1,2 +1,8 @@
-res://Scenes/test
+res://Scenes/components
+res://Assets/game/Tilesets
 res://Tilesets
+res://Scenes/houses
+res://Scripts/state_machine
+res://Assets/game/Characters
+res://Scenes/characters/player
+res://Scenes/test

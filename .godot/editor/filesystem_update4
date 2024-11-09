@@ -1,2 +1,14 @@
 res://Scenes/test/test_scene_tilemap.tscn
 res://Tilesets/game_tile_set.tres
+res://Tilesets/house_tile_set.tres
+res://Scenes/test/test_scene_player.tscn
+res://Scenes/characters/player/player.tscn
+res://Scenes/houses/large_house.tscn
+res://Scenes/characters/player/player.gd
+res://Scenes/components/door.tscn
+res://Scenes/components/InteractableComponent.tscn
+res://Scenes/components/interactable_component.gd
+res://Scenes/houses/door.tscn
+res://Scenes/houses/door.gd
+res://Scenes/houses/small_house.tscn
+res://Scripts/game_input_event.gd

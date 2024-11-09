@@ -1,2 +1,9 @@
+CollisionShape2D
+Area2D
+AnimatedSprite2D
+StaticBody2D
 TileMapLayer
 Node2D
+Node
+NodeState
+CharacterBody2D
