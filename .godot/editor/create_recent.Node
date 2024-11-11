@@ -1,9 +1,12 @@
-CollisionShape2D
-Area2D
-AnimatedSprite2D
-StaticBody2D
 TileMapLayer
 Node2D
-Node
+NavigationRegion2D
+NavigationAgent2D
 NodeState
+Node
+CollisionShape2D
+AnimatedSprite2D
 CharacterBody2D
+StaticBody2D
+Sprite2D
+Area2D

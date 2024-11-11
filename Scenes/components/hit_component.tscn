@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnnvycsavot44"]
+
+[ext_resource type="Script" path="res://Scenes/components/hit_component.gd" id="1_urixr"]
+
+[node name="HitComponent" type="Area2D"]
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("1_urixr")

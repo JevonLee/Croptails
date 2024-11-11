@@ -20,8 +20,7 @@ window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/mode="viewport"
-window/stretch/aspect="keep_height"
+window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
 [file_customization]
@@ -32,6 +31,10 @@ folder_colors={
 "res://Scripts/": "teal",
 "res://Tilesets/": "pink"
 }
+
+[global_group]
+
+navigation_polygon_source_geometry_group=""
 
 [input]
 
@@ -64,8 +67,14 @@ hit={
 [layer_names]
 
 2d_physics/layer_1="Ground"
+2d_navigation/layer_1="Chicken Navigation"
 2d_physics/layer_2="Player"
+2d_navigation/layer_2="Cow Navigation"
 2d_physics/layer_3="Interactable"
+2d_physics/layer_4="Tool"
+2d_physics/layer_5="Object"
+2d_physics/layer_6="Collectable"
+2d_physics/layer_7="Npc"
 
 [rendering]
 

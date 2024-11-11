@@ -1,12 +1,11 @@
-[gd_scene load_steps=52 format=3 uid="uid://yqwteea6e2jt"]
+[gd_scene load_steps=54 format=3 uid="uid://yqwteea6e2jt"]
 
 [ext_resource type="Texture2D" uid="uid://dscc36aocfbvp" path="res://Assets/game/Characters/Basic_Charakter_Actions.png" id="1_g604b"]
 [ext_resource type="Script" path="res://Scenes/characters/player/player.gd" id="1_p2ljb"]
 [ext_resource type="Texture2D" uid="uid://dr0kkii6h5cph" path="res://Assets/game/Characters/Basic_Charakter_Spritesheet.png" id="2_hxyhq"]
-[ext_resource type="Script" path="res://Scripts/state_machine/idle_state.gd" id="3_1gcup"]
 [ext_resource type="Script" path="res://Scripts/state_machine/node_state_machine.gd" id="3_f6ah8"]
-[ext_resource type="Script" path="res://Scripts/state_machine/walk_state.gd" id="5_v53ni"]
 [ext_resource type="Script" path="res://Scenes/characters/player/chopping_state.gd" id="7_a6tu6"]
+[ext_resource type="PackedScene" uid="uid://bnnvycsavot44" path="res://Scenes/components/hit_component.tscn" id="8_auo8s"]
 [ext_resource type="Script" path="res://Scenes/characters/player/tilling_state.gd" id="8_cwc0b"]
 [ext_resource type="Script" path="res://Scenes/characters/player/watering_state.gd" id="9_cybju"]
 
@@ -394,18 +393,113 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64mp4"]
-size = Vector2(12, 6)
+size = Vector2(10, 6)
+
+[sub_resource type="GDScript" id="GDScript_s3yxd"]
+script/source = "extends NodeState
+
+@export var player : Player
+@export var animated_sprite_2d : AnimatedSprite2D
+
+
+func _on_process(_delta : float) -> void:
+	pass
+
+
+func _on_physics_process(_delta : float) -> void:
+	if player.player_direction == Vector2.UP:
+		animated_sprite_2d.play(\"idle_back\")
+	elif player.player_direction == Vector2.DOWN:
+		animated_sprite_2d.play(\"idle_front\")
+	elif player.player_direction == Vector2.LEFT:
+		animated_sprite_2d.play(\"idle_left\")
+	elif player.player_direction == Vector2.RIGHT:
+		animated_sprite_2d.play(\"idle_right\")
+	else:
+		animated_sprite_2d.play(\"idle_front\")
+
+
+func _on_next_transitions() -> void: #状态转换过渡函数，满足条件则发出信号
+	GameInputEvents.movement_input() #检查输入，确认是否转换状态
+	
+	if GameInputEvents.is_movement_input():
+		transition.emit(\"Walk\")
+	
+	if player.current_tool == DataTypes.Tools.AxeWood && GameInputEvents.use_tool():
+		transition.emit(\"Chopping\")
+	if player.current_tool == DataTypes.Tools.TillGround && GameInputEvents.use_tool():
+		transition.emit(\"Tilling\")
+	if player.current_tool == DataTypes.Tools.WaterCrops && GameInputEvents.use_tool():
+		transition.emit(\"Watering\")
+
+
+func _on_enter() -> void:
+	pass
+
+
+func _on_exit() -> void:
+	animated_sprite_2d.stop() #退出时停止idle动画
+"
+
+[sub_resource type="GDScript" id="GDScript_m7s5u"]
+script/source = "extends NodeState
+
+@export var player : Player #修改为自定义的Player类
+@export var animated_sprite_2d : AnimatedSprite2D
+var speed:int = 50
+var direction: Vector2
+
+func _on_process(_delta : float) -> void:
+	pass
+
+
+func _on_physics_process(_delta : float) -> void:
+	direction = GameInputEvents.movement_input()
+
+	if direction == Vector2.UP:
+		animated_sprite_2d.play(\"walk_back\")
+	elif direction == Vector2.DOWN:
+		animated_sprite_2d.play(\"walk_front\")
+	elif direction == Vector2.LEFT:
+		animated_sprite_2d.play(\"walk_left\")
+	elif direction == Vector2.RIGHT:
+		animated_sprite_2d.play(\"walk_right\")
+	
+	if direction != Vector2.ZERO: #行走时将方向变量赋值给player_direction，这样Walk转换到Idle时，Idle里面的player_direction就是行走时的方向
+		player.player_direction = direction
+	
+	player.velocity = direction * speed
+	player.move_and_slide()
+
+
+func _on_next_transitions() -> void:
+	if !GameInputEvents.is_movement_input():
+		transition.emit(\"Idle\") #使用信号可以使代码直接保持低耦合
+
+
+func _on_enter() -> void:
+	pass
+
+
+func _on_exit() -> void:
+	animated_sprite_2d.stop()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pfgn1"]
+radius = 3.16228
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 69
 script = ExtResource("1_p2ljb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_ffjuf")
-animation = &"idle_front"
+animation = &"chopping_front"
 autoplay = "idle_front"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
@@ -416,19 +510,20 @@ script = ExtResource("3_f6ah8")
 initial_node_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
-script = ExtResource("3_1gcup")
+script = SubResource("GDScript_s3yxd")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
-script = ExtResource("5_v53ni")
+script = SubResource("GDScript_m7s5u")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Chopping" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Chopping" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_collision_shape")]
 script = ExtResource("7_a6tu6")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
 [node name="Tilling" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("8_cwc0b")
@@ -439,3 +534,11 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("9_cybju")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="HitComponent" parent="." instance=ExtResource("8_auo8s")]
+current_tool = 1
+
+[node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_pfgn1")
+debug_color = Color(0.758212, 0.388076, 0.61824, 0.42)
