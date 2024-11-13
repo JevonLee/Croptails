@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dytri7vg55tgo"]
+
+[ext_resource type="PackedScene" uid="uid://bnpaibu3edn7r" path="res://Scenes/ui/tools_panel.tscn" id="1_72j8r"]
+
+[node name="GameScreen" type="CanvasLayer"]
+
+[node name="ToolsPanel" parent="." instance=ExtResource("1_72j8r")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -48.0
+offset_right = 84.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0

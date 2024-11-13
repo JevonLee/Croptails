@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=4 uid="uid://bpjsddivw53k3"]
+[gd_scene load_steps=12 format=4 uid="uid://bpjsddivw53k3"]
 
 [ext_resource type="TileSet" uid="uid://bw1bjivgj2dx3" path="res://Tilesets/game_tile_set.tres" id="1_w7ddw"]
 [ext_resource type="PackedScene" uid="uid://yqwteea6e2jt" path="res://Scenes/characters/player/player.tscn" id="2_6wwmn"]
 [ext_resource type="PackedScene" uid="uid://csofuiarc7p2k" path="res://Scenes/characters/chicken/chicken.tscn" id="3_xj6as"]
 [ext_resource type="PackedScene" uid="uid://cnwa3jtoljo80" path="res://Scenes/characters/cow/cow.tscn" id="4_3yamd"]
+[ext_resource type="PackedScene" uid="uid://dytri7vg55tgo" path="res://Scenes/ui/game_screen.tscn" id="5_oqqct"]
+[ext_resource type="PackedScene" uid="uid://c5j1txmghosij" path="res://Scenes/objects/plants/tomato.tscn" id="6_i7naa"]
+[ext_resource type="PackedScene" uid="uid://1vq6wn8trqby" path="res://Scenes/objects/plants/corn.tscn" id="7_6604m"]
+[ext_resource type="PackedScene" uid="uid://cybii8iclq3lp" path="res://Scenes/objects/egg.tscn" id="8_e02sf"]
+[ext_resource type="PackedScene" uid="uid://dyb7wubjvol5c" path="res://Scenes/objects/milk.tscn" id="9_tmco7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jxko8"]
 vertices = PackedVector2Array(258.18, 212.047, 223.938, 206.039, 245.141, 189.563, 266.141, 75.5234, 268, 74.0469, 268, 166, 380, 54, 380, 135, 332, 135, 294, 54, 332, 166, 398, 166, 398, 185.609, 302.797, 214.898, 310, 135, 294, 135, 310, 166)
@@ -12,9 +17,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(295, 40, 408, 38, 408, 
 source_geometry_mode = 2
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sv8g4"]
-vertices = PackedVector2Array(551.758, 212.328, 382.32, 249.039, 339.117, 204.297, 406.148, 166, 469, 166, 549, 166, 549, 49.8281, 571.578, 51.3828, 577.867, 149.313, 469, 135, 421, 135, 421, 54, 523, 54, 523, 135, 507, 135, 507, 166)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 0), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(12, 13, 14), PackedInt32Array(9, 12, 14, 4), PackedInt32Array(4, 14, 15), PackedInt32Array(0, 4, 15), PackedInt32Array(5, 0, 15)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(408, 38, 537, 39, 581, 42, 588, 151, 559, 221, 379, 260, 323, 202, 407, 154)])
+vertices = PackedVector2Array(546.508, 274.773, 383.828, 250.602, 339.117, 204.297, 406.148, 166, 469, 166, 549, 166, 549, 49.8281, 571.578, 51.3828, 577.906, 150.07, 507, 166, 469, 135, 507, 135, 421, 135, 421, 54, 523, 54, 523, 135)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(5, 8, 0), PackedInt32Array(9, 5, 0), PackedInt32Array(9, 0, 4, 10), PackedInt32Array(11, 9, 10), PackedInt32Array(10, 12, 13, 14), PackedInt32Array(11, 10, 14), PackedInt32Array(11, 14, 15)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(408, 38, 537, 39, 581, 42, 588, 151, 554, 286, 379, 260, 323, 202, 407, 154)])
 source_geometry_mode = 2
 
 [node name="TestSceneChicken" type="Node2D"]
@@ -59,7 +64,6 @@ tile_set = ExtResource("1_w7ddw")
 [node name="Player" parent="." instance=ExtResource("2_6wwmn")]
 y_sort_enabled = true
 position = Vector2(341, 230)
-current_tool = 1
 
 [node name="Chickens" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -97,7 +101,23 @@ position = Vector2(446, 99)
 position = Vector2(501, 72)
 
 [node name="Cow3" parent="Cows" instance=ExtResource("4_3yamd")]
-position = Vector2(479, 199)
+position = Vector2(522, 246)
 
 [node name="Cow4" parent="Cows" instance=ExtResource("4_3yamd")]
 position = Vector2(418, 180)
+
+[node name="Collectable" type="Node2D" parent="."]
+
+[node name="Tomato" parent="Collectable" instance=ExtResource("6_i7naa")]
+position = Vector2(438, 252)
+
+[node name="Corn" parent="Collectable" instance=ExtResource("7_6604m")]
+position = Vector2(418, 239)
+
+[node name="Egg" parent="Collectable" instance=ExtResource("8_e02sf")]
+position = Vector2(393, 223)
+
+[node name="Milk" parent="Collectable" instance=ExtResource("9_tmco7")]
+position = Vector2(430, 215)
+
+[node name="GameScreen" parent="." instance=ExtResource("5_oqqct")]
