@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://bpjsddivw53k3"]
+[gd_scene load_steps=13 format=4 uid="uid://bpjsddivw53k3"]
 
 [ext_resource type="TileSet" uid="uid://bw1bjivgj2dx3" path="res://Tilesets/game_tile_set.tres" id="1_w7ddw"]
+[ext_resource type="PackedScene" uid="uid://cft7ln6i63kir" path="res://Scenes/components/day_night_cycle_component.tscn" id="1_x6fsc"]
 [ext_resource type="PackedScene" uid="uid://yqwteea6e2jt" path="res://Scenes/characters/player/player.tscn" id="2_6wwmn"]
 [ext_resource type="PackedScene" uid="uid://csofuiarc7p2k" path="res://Scenes/characters/chicken/chicken.tscn" id="3_xj6as"]
 [ext_resource type="PackedScene" uid="uid://cnwa3jtoljo80" path="res://Scenes/characters/cow/cow.tscn" id="4_3yamd"]
@@ -24,6 +25,9 @@ source_geometry_mode = 2
 
 [node name="TestSceneChicken" type="Node2D"]
 y_sort_enabled = true
+
+[node name="DayNightCycleComponent" parent="." instance=ExtResource("1_x6fsc")]
+initial_hour = 8
 
 [node name="GameTileMap" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -119,5 +123,11 @@ position = Vector2(393, 223)
 
 [node name="Milk" parent="Collectable" instance=ExtResource("9_tmco7")]
 position = Vector2(430, 215)
+
+[node name="Milk2" parent="Collectable" instance=ExtResource("9_tmco7")]
+position = Vector2(366, 194)
+
+[node name="Corn2" parent="Collectable" instance=ExtResource("7_6604m")]
+position = Vector2(405, 271)
 
 [node name="GameScreen" parent="." instance=ExtResource("5_oqqct")]
