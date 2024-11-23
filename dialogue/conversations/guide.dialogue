@@ -1,0 +1,10 @@
+~ start
+Kitty: [[Hi|Hello]], nice to meet you!
+Kitty: Welcome to your new farm.
+Kitty: Here are your seeds.
+- 获得种子:
+	do GameDialogueManager.action_give_crop_seeds()
+- 不，我不要种子：
+	Kitty: [shake rate=20 level=10][/shake]No, I don`t need crop seeds
+
+=> END

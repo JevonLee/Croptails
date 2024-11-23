@@ -1,15 +1,23 @@
-[gd_scene load_steps=13 format=4 uid="uid://bpjsddivw53k3"]
+[gd_scene load_steps=21 format=4 uid="uid://bpjsddivw53k3"]
 
 [ext_resource type="TileSet" uid="uid://bw1bjivgj2dx3" path="res://Tilesets/game_tile_set.tres" id="1_w7ddw"]
 [ext_resource type="PackedScene" uid="uid://cft7ln6i63kir" path="res://Scenes/components/day_night_cycle_component.tscn" id="1_x6fsc"]
 [ext_resource type="PackedScene" uid="uid://yqwteea6e2jt" path="res://Scenes/characters/player/player.tscn" id="2_6wwmn"]
+[ext_resource type="PackedScene" uid="uid://blcss4ruitbkd" path="res://Scenes/components/save_data_component.tscn" id="3_oec3m"]
+[ext_resource type="PackedScene" uid="uid://ddsue4fx18qan" path="res://Scenes/components/field_cursor_component.tscn" id="3_qw70b"]
+[ext_resource type="Script" path="res://Scenes/test/crops_cursor_component.gd" id="3_rt8cp"]
 [ext_resource type="PackedScene" uid="uid://csofuiarc7p2k" path="res://Scenes/characters/chicken/chicken.tscn" id="3_xj6as"]
 [ext_resource type="PackedScene" uid="uid://cnwa3jtoljo80" path="res://Scenes/characters/cow/cow.tscn" id="4_3yamd"]
+[ext_resource type="Script" path="res://Scenes/components/field_cursor_component.gd" id="4_185qu"]
+[ext_resource type="Resource" uid="uid://dqrlumfcu0ma6" path="res://resources/tilemap_layer_data_resource.tres" id="4_bvkfk"]
 [ext_resource type="PackedScene" uid="uid://dytri7vg55tgo" path="res://Scenes/ui/game_screen.tscn" id="5_oqqct"]
-[ext_resource type="PackedScene" uid="uid://c5j1txmghosij" path="res://Scenes/objects/plants/tomato.tscn" id="6_i7naa"]
-[ext_resource type="PackedScene" uid="uid://1vq6wn8trqby" path="res://Scenes/objects/plants/corn.tscn" id="7_6604m"]
+[ext_resource type="PackedScene" uid="uid://c5j1txmghosij" path="res://Scenes/objects/plants/tomato_harvest.tscn" id="6_i7naa"]
+[ext_resource type="PackedScene" uid="uid://1vq6wn8trqby" path="res://Scenes/objects/plants/corn_harvest.tscn" id="7_6604m"]
 [ext_resource type="PackedScene" uid="uid://cybii8iclq3lp" path="res://Scenes/objects/egg.tscn" id="8_e02sf"]
 [ext_resource type="PackedScene" uid="uid://dyb7wubjvol5c" path="res://Scenes/objects/milk.tscn" id="9_tmco7"]
+[ext_resource type="Script" path="res://Scenes/test/save_level_data_component.gd" id="14_yq2si"]
+[ext_resource type="PackedScene" uid="uid://cw7nhmeq4scva" path="res://Scenes/components/test_scene_save_data_manager_component.tscn" id="15_643fs"]
+[ext_resource type="PackedScene" uid="uid://bvuvjk0dvc41u" path="res://Scenes/characters/guide/guide.tscn" id="18_mj3iw"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jxko8"]
 vertices = PackedVector2Array(258.18, 212.047, 223.938, 206.039, 245.141, 189.563, 266.141, 75.5234, 268, 74.0469, 268, 166, 380, 54, 380, 135, 332, 135, 294, 54, 332, 166, 398, 166, 398, 185.609, 302.797, 214.898, 310, 135, 294, 135, 310, 166)
@@ -27,6 +35,7 @@ source_geometry_mode = 2
 y_sort_enabled = true
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_x6fsc")]
+visible = false
 initial_hour = 8
 
 [node name="GameTileMap" type="Node2D" parent="."]
@@ -64,6 +73,24 @@ tile_set = ExtResource("1_w7ddw")
 [node name="Objects" type="TileMapLayer" parent="GameTileMap" groups=["navigation_polygon_source_geometry_group"]]
 tile_map_data = PackedByteArray("AAASAAIABQABAAAAAAAZAAMABQAAAAEAAAAZAAQABQAAAAEAAAAZAAUABQAAAAEAAAAZAAYABQAAAAEAAAAZAAcABQAAAAEAAAASAAgABQAAAAEAAAASAAcABQAAAAEAAAASAAYABQAAAAEAAAASAAUABQAAAAEAAAASAAQABQAAAAEAAAASAAMABQAAAAEAAAATAAIABQACAAMAAAAUAAIABQACAAMAAAAVAAIABQACAAMAAAAWAAIABQACAAMAAAAXAAIABQACAAMAAAAYAAIABQACAAMAAAAZAAIABQACAAAAAAAZAAgABQAAAAEAAAAZAAkABQACAAIAAAASAAkABQABAAIAAAAWAAkABQABAAMAAAAXAAkABQACAAMAAAAYAAkABQACAAMAAAAaAAIABQACAAMAAAAbAAIABQACAAMAAAAcAAIABQACAAMAAAAdAAIABQACAAMAAAAeAAIABQACAAMAAAAfAAIABQACAAMAAAAgAAIABQACAAMAAAAhAAIABQADAAAAAAAhAAMABQAAAAEAAAAhAAQABQAAAAEAAAAhAAUABQAAAAEAAAAhAAYABQAAAAEAAAAhAAcABQAAAAEAAAAhAAgABQAAAAEAAAAhAAkABQADAAIAAAAaAAkABQACAAMAAAAbAAkABQACAAMAAAAgAAkABQABAAMAAAATAAkABQADAAMAAAAcAAkABQADAAMAAAA=")
 tile_set = ExtResource("1_w7ddw")
+
+[node name="TilledSoil" type="TileMapLayer" parent="GameTileMap"]
+tile_set = ExtResource("1_w7ddw")
+
+[node name="SaveDataComponent" parent="GameTileMap/TilledSoil" instance=ExtResource("3_oec3m")]
+save_data_resource = ExtResource("4_bvkfk")
+
+[node name="CropsField" type="Node2D" parent="."]
+
+[node name="CropsCursorComponent" type="Node" parent="." node_paths=PackedStringArray("tilled_soil")]
+script = ExtResource("3_rt8cp")
+tilled_soil = NodePath("../GameTileMap/TilledSoil")
+
+[node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass", "tilled_soil", "player") instance=ExtResource("3_qw70b")]
+script = ExtResource("4_185qu")
+grass = NodePath("../GameTileMap/Grass")
+tilled_soil = NodePath("../GameTileMap/TilledSoil")
+player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_6wwmn")]
 y_sort_enabled = true
@@ -131,3 +158,12 @@ position = Vector2(366, 194)
 position = Vector2(405, 271)
 
 [node name="GameScreen" parent="." instance=ExtResource("5_oqqct")]
+
+[node name="SaveLevelDataComponent" type="Node" parent="."]
+script = ExtResource("14_yq2si")
+
+[node name="TestSceneSaveDataManagerComponent" parent="." instance=ExtResource("15_643fs")]
+
+[node name="Guide" parent="." instance=ExtResource("18_mj3iw")]
+y_sort_enabled = true
+position = Vector2(164, 192)

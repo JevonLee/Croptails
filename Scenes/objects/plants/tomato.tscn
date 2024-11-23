@@ -1,20 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5j1txmghosij"]
+[gd_scene load_steps=10 format=3 uid="uid://xr5148t3r1x4"]
 
+[ext_resource type="Script" path="res://Scenes/objects/plants/tomato.gd" id="1_jigc8"]
 [ext_resource type="Texture2D" uid="uid://b8u8f6t26lu4d" path="res://Assets/game/Objects/Basic_Plants.png" id="1_yxp4s"]
-[ext_resource type="PackedScene" uid="uid://c6ntn1rn6kmd" path="res://Scenes/components/collectable_component.tscn" id="2_283u8"]
+[ext_resource type="PackedScene" uid="uid://c65qxxe3lkpy5" path="res://Scenes/objects/plants/watering_particles.tscn" id="3_orgud"]
+[ext_resource type="PackedScene" uid="uid://bkf16yfka1cgd" path="res://Scenes/objects/plants/flowering_particles.tscn" id="4_cs53x"]
+[ext_resource type="PackedScene" uid="uid://b23k0wadri288" path="res://Scenes/components/hurt_component.tscn" id="5_ubxbv"]
+[ext_resource type="PackedScene" uid="uid://t8xm7sa52vqb" path="res://Scenes/objects/plants/growth_cycle_component.tscn" id="6_doyja"]
+[ext_resource type="PackedScene" uid="uid://blcss4ruitbkd" path="res://Scenes/components/save_data_component.tscn" id="7_ips57"]
+[ext_resource type="Resource" uid="uid://blo1p15cc7tll" path="res://resources/scene_data_resource.tres" id="8_5t010"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0i8h1"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc11e"]
+size = Vector2(13, 8)
 
-[node name="Tomato" type="Sprite2D"]
+[node name="Tomato" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(0, -5)
+script = ExtResource("1_jigc8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -3)
 texture = ExtResource("1_yxp4s")
 hframes = 6
 vframes = 2
-frame = 11
+frame = 7
 
-[node name="CollectableComponent" parent="." instance=ExtResource("2_283u8")]
-collectable_name = "tomato"
+[node name="WateringParticles" parent="." instance=ExtResource("3_orgud")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
-shape = SubResource("CircleShape2D_0i8h1")
+[node name="FloweringParticles" parent="." instance=ExtResource("4_cs53x")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("5_ubxbv")]
+position = Vector2(0, -2)
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_hc11e")
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("6_doyja")]
+current_growth_state = 1
+
+[node name="SaveDataComponent" parent="." instance=ExtResource("7_ips57")]
+save_data_resource = ExtResource("8_5t010")

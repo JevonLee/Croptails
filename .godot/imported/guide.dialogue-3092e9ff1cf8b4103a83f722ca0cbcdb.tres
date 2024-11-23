@@ -1,0 +1,132 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_psdji"]
+
+[resource]
+script = ExtResource("1_psdji")
+using_states = PackedStringArray()
+titles = {
+"start": "2"
+}
+character_names = PackedStringArray("Kitty")
+first_title = "2"
+lines = {
+"1": {
+"id": "1",
+"next_id": "2",
+"text": "start",
+"type": &"title"
+},
+"10": {
+"id": "10",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"2": {
+"character": "Kitty",
+"character_replacements": Array[Dictionary]([]),
+"id": "2",
+"next_id": "3",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "[[Hi|Hello]], nice to meet you!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Hi|Hello]], nice to meet you!",
+"type": &"dialogue"
+},
+"3": {
+"character": "Kitty",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Welcome to your new farm.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Welcome to your new farm.",
+"type": &"dialogue"
+},
+"4": {
+"character": "Kitty",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Here are your seeds.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Here are your seeds.",
+"type": &"dialogue"
+},
+"5": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"next_id_after": "10",
+"notes": "",
+"responses": PackedStringArray("5", "7"),
+"tags": PackedStringArray(),
+"text": "获得种子:",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "获得种子:",
+"type": &"response"
+},
+"6": {
+"id": "6",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GameDialogueManager"
+}, {
+"type": "dot"
+}, {
+"function": "action_give_crop_seeds",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "10",
+"parent_id": "5",
+"type": &"mutation"
+},
+"7": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"next_id_after": "10",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "不，我不要种子：",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "不，我不要种子：",
+"type": &"response"
+},
+"8": {
+"character": "Kitty",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "10",
+"notes": "",
+"parent_id": "7",
+"tags": PackedStringArray(),
+"text": "[shake rate=20 level=10][/shake]No, I don`t need crop seeds",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[shake rate=20 level=10][/shake]No, I don`t need crop seeds",
+"type": &"dialogue"
+}
+}
+raw_text = "~ start
+Kitty: [[Hi|Hello]], nice to meet you!
+Kitty: Welcome to your new farm.
+Kitty: Here are your seeds.
+- 获得种子:
+	do GameDialogueManager.action_give_crop_seeds()
+- 不，我不要种子：
+	Kitty: [shake rate=20 level=10][/shake]No, I don`t need crop seeds
+
+=> END"
+metadata/dialogue_manager_version = "2.44.0"

@@ -1,7 +1,12 @@
-res://Scenes/components
+res://Assets/game/Objects
+res://Assets/UI/Dialouge UI/Emotes
 res://Scripts/globals
 res://Scenes/ui
+res://dialogue
 res://Assets/game/Characters
+res://resources
+res://Scenes/components
+res://Scenes/objects/plants
 res://Assets/game/Tilesets
 res://Tilesets
 res://Scenes/houses

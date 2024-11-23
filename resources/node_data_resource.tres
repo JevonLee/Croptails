@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://twpmu2sck6ac"]
+
+[ext_resource type="Script" path="res://resources/node_data_resource.gd" id="1_dn73w"]
+
+[resource]
+script = ExtResource("1_dn73w")
+global_position = Vector2(0, 0)
+node_path = NodePath("")
+parent_node_path = NodePath("")

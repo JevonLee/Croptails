@@ -1,8 +1,19 @@
-[gd_resource type="Theme" load_steps=40 format=3 uid="uid://bvahw72yoclgl"]
+[gd_resource type="Theme" load_steps=42 format=3 uid="uid://bvahw72yoclgl"]
 
 [ext_resource type="Texture2D" uid="uid://dft16jbidapcc" path="res://Assets/UI/Sprite sheet for Basic Pack.png" id="1_ymnhu"]
 [ext_resource type="FontVariation" uid="uid://cj0n5belyjjik" path="res://Scenes/ui/zx_paml.tres" id="2_cs1fs"]
 [ext_resource type="FontFile" uid="uid://cq8fjgori3eej" path="res://Assets/font/Kenney Mini Square.ttf" id="2_krwva"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpuxn"]
+atlas = ExtResource("1_ymnhu")
+region = Rect2(59, 155, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0do5"]
+texture = SubResource("AtlasTexture_lpuxn")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tt3it"]
 load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-e1e04fae3c1cb4fb7d8c5d2d4763ee83.ctex"
@@ -180,6 +191,8 @@ texture_margin_right = 4.0
 texture_margin_bottom = 6.0
 
 [resource]
+BagPanel/base_type = &"PanelContainer"
+BagPanel/styles/panel = SubResource("StyleBoxTexture_n0do5")
 DarkWoodPanel/base_type = &"PanelContainer"
 DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_w4n6n")
 DayAndNightButton/base_type = &"Button"

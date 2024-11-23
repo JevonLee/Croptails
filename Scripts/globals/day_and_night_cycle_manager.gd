@@ -23,7 +23,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	time += delta * game_speed * GAME_MINUTE_DURATION #通过delta更新时间
-	print(time)
+	#print(time)
 	game_time.emit(time) #把当前时间传递出去
 	recalculate_time() 
 

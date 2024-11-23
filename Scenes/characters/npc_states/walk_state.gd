@@ -11,6 +11,7 @@ var speed: float
 func _ready() -> void:
 	navigation_agent_2d.velocity_computed.connect(on_safe_velocity_computed) #用于计算避障的安全速度。
 	call_deferred("character_setup") #确保场景已完全加载。
+	navigation_agent_2d.avoidance_enabled = true
 	
 func character_setup() -> void:
 	await get_tree().physics_frame #等待物理帧结束的信号
