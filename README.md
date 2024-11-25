@@ -31,13 +31,13 @@
 
 ## 开始菜单
 
-![Snipaste_2024-11-25_23-17-09](https://github.com/JevonLee/Croptails/tree/main/img/Snipaste_2024-11-25_23-17-09.jpg) 
+![Snipaste_2024-11-25_23-17-09](./img/Snipaste_2024-11-25_23-17-09.jpg) 
 
 ## NPC对话
 
-![Snipaste_2024-11-25_23-18-00](https://github.com/JevonLee/Croptails/tree/main/img/Snipaste_2024-11-25_23-18-00.jpg) 
+![Snipaste_2024-11-25_23-18-00](./img/Snipaste_2024-11-25_23-18-00.jpg) 
 
 ## 种植
 
-![Snipaste_2024-11-25_23-36-43](https://github.com/JevonLee/Croptails/tree/main/img/Snipaste_2024-11-25_23-36-43.jpg) 
+![Snipaste_2024-11-25_23-36-43](./img/Snipaste_2024-11-25_23-36-43.jpg) 
 
