@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cqie0vs3dmpm6"]
+[gd_scene load_steps=20 format=3 uid="uid://cqie0vs3dmpm6"]
 
 [ext_resource type="Texture2D" uid="uid://cesps4ubfuwxl" path="res://Assets/game/Objects/Chest.png" id="1_5ir7c"]
 [ext_resource type="Script" path="res://Scenes/objects/chest/chest.gd" id="1_oe1sk"]
@@ -94,7 +94,11 @@ radius = 18.0278
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wva54"]
 
-[node name="Chest" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iejtp"]
+size = Vector2(16, 7)
+
+[node name="Chest" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_oe1sk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -116,7 +120,13 @@ offset_bottom = -13.0
 position = Vector2(14, 13)
 
 [node name="FeedComponent" parent="." instance=ExtResource("4_yyxfn")]
+collision_layer = 16
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FeedComponent"]
 shape = SubResource("CircleShape2D_wva54")
 debug_color = Color(0.567761, 0.532098, 0.461754, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_iejtp")

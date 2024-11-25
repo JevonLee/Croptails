@@ -7,6 +7,7 @@ var idle_emotes:Array = ["emote_1_idle","emote_2_smile","emote_3_ear_wave","emot
 
 func _ready() -> void:
 	animated_sprited_2d.play("emote_1_idle")
+	InventoryManager.inventory_changed.connect(on_inventory_changed)
 	
 func play_emotes(animation:String) ->void:
 	animated_sprited_2d.play(animation)
@@ -14,5 +15,8 @@ func play_emotes(animation:String) ->void:
 func _on_emote_idle_timer_timeout() -> void:
 	var index = randi_range(0,3)
 	var emote = idle_emotes[index]
-	print(emote)
+	#print(emote)
 	play_emotes(emote)
+
+func on_inventory_changed() -> void:
+	animated_sprited_2d.play("emote_excited")

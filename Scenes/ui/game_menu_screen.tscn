@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://de1hdcl7ugf3j"]
+
+[ext_resource type="PackedScene" uid="uid://33770y51fa2q" path="res://Scenes/test/game_menu_scene.tscn" id="1_1vu31"]
+[ext_resource type="Script" path="res://Scenes/ui/game_menu_screen.gd" id="1_ew25c"]
+[ext_resource type="Theme" uid="uid://bvahw72yoclgl" path="res://Scenes/ui/game_ui_theme.tres" id="1_flqvy"]
+[ext_resource type="PackedScene" uid="uid://cjp8kttc2jfja" path="res://Scenes/components/MouseCursorComponent.tscn" id="2_uje73"]
+
+[node name="GameMenuScreen" type="CanvasLayer"]
+script = ExtResource("1_ew25c")
+
+[node name="MouseCursorComponent" parent="." instance=ExtResource("2_uje73")]
+
+[node name="GameMenuScene" parent="." instance=ExtResource("1_1vu31")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_flqvy")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"DayAndNightLabel"
+theme_override_colors/font_color = Color(0.607843, 0.831373, 0.764706, 1)
+theme_override_colors/font_shadow_color = Color(0.741176, 0.458824, 0.494118, 1)
+theme_override_font_sizes/font_size = 52
+text = "CropTails
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+text = "START"
+
+[node name="SaveGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+text = "SAVE"
+
+[node name="ExitGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+text = "EXIT
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SaveGameButton" to="." method="_on_save_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]

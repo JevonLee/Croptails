@@ -65,6 +65,7 @@ animations = [{
 size = Vector2(10, 6)
 
 [node name="Chicken" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 64
 collision_mask = 67
 script = ExtResource("1_3rssr")

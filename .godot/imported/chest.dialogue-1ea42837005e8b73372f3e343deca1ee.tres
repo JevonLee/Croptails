@@ -1,0 +1,251 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_3nyr4"]
+
+[resource]
+script = ExtResource("1_3nyr4")
+using_states = PackedStringArray()
+titles = {
+"start_chicken_box": "12",
+"start_cow_box": "2"
+}
+character_names = PackedStringArray("box", "Kitty")
+first_title = "2"
+lines = {
+"1": {
+"id": "1",
+"next_id": "2",
+"text": "start_cow_box",
+"type": &"title"
+},
+"11": {
+"id": "11",
+"next_id": "12",
+"text": "start_chicken_box",
+"type": &"title"
+},
+"12": {
+"character": "box",
+"character_replacements": Array[Dictionary]([]),
+"id": "12",
+"next_id": "13",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "[[Hi|Hello]],你的动物似乎饿了！",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Hi|Hello]],你的动物似乎饿了！",
+"type": &"dialogue"
+},
+"13": {
+"character": "box",
+"character_replacements": Array[Dictionary]([]),
+"id": "13",
+"next_id": "14",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "你想喂你的坤吗？",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "你想喂你的坤吗？",
+"type": &"dialogue"
+},
+"14": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "14",
+"next_id": "15",
+"next_id_after": "19",
+"notes": "",
+"responses": PackedStringArray("14", "17"),
+"tags": PackedStringArray(),
+"text": "yes:",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "yes:",
+"type": &"response"
+},
+"15": {
+"character": "Kitty",
+"character_replacements": Array[Dictionary]([]),
+"id": "15",
+"next_id": "16",
+"notes": "",
+"parent_id": "14",
+"tags": PackedStringArray(),
+"text": "是的，它需要吃坤饲料",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "是的，它需要吃坤饲料",
+"type": &"dialogue"
+},
+"16": {
+"id": "16",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GameDialogueManager"
+}, {
+"type": "dot"
+}, {
+"function": "action_feed_animals",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "19",
+"parent_id": "14",
+"type": &"mutation"
+},
+"17": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "17",
+"next_id": "18",
+"next_id_after": "19",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "No:",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "No:",
+"type": &"response"
+},
+"18": {
+"character": "Kitty",
+"character_replacements": Array[Dictionary]([]),
+"id": "18",
+"next_id": "19",
+"notes": "",
+"parent_id": "17",
+"tags": PackedStringArray(),
+"text": "不，它只想打篮球！",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "不，它只想打篮球！",
+"type": &"dialogue"
+},
+"19": {
+"id": "19",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"2": {
+"character": "box",
+"character_replacements": Array[Dictionary]([]),
+"id": "2",
+"next_id": "3",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "[[Hi|Hello]],你的动物似乎饿了！",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Hi|Hello]],你的动物似乎饿了！",
+"type": &"dialogue"
+},
+"3": {
+"character": "box",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "你想喂你的牛吗？",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "你想喂你的牛吗？",
+"type": &"dialogue"
+},
+"4": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"next_id_after": "9",
+"notes": "",
+"responses": PackedStringArray("4", "7"),
+"tags": PackedStringArray(),
+"text": "yes:",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "yes:",
+"type": &"response"
+},
+"5": {
+"character": "Kitty",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"notes": "",
+"parent_id": "4",
+"tags": PackedStringArray(),
+"text": "是的，它需要吃！",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "是的，它需要吃！",
+"type": &"dialogue"
+},
+"6": {
+"id": "6",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GameDialogueManager"
+}, {
+"type": "dot"
+}, {
+"function": "action_feed_animals",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "9",
+"parent_id": "4",
+"type": &"mutation"
+},
+"7": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"next_id_after": "9",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "No:",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "No:",
+"type": &"response"
+},
+"8": {
+"character": "Kitty",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "9",
+"notes": "",
+"parent_id": "7",
+"tags": PackedStringArray(),
+"text": "不，我不想喂！",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "不，我不想喂！",
+"type": &"dialogue"
+},
+"9": {
+"id": "9",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+}
+}
+raw_text = "~ start_cow_box
+box: [[Hi|Hello]],你的动物似乎饿了！
+box: 你想喂你的牛吗？
+- yes: 
+	Kitty: 是的，它需要吃！
+	do GameDialogueManager.action_feed_animals()
+- No: 
+	Kitty: 不，我不想喂！
+=> END
+
+~ start_chicken_box
+box: [[Hi|Hello]],你的动物似乎饿了！
+box: 你想喂你的坤吗？
+- yes: 
+	Kitty: 是的，它需要吃坤饲料
+	do GameDialogueManager.action_feed_animals()
+- No: 
+	Kitty: 不，它只想打篮球！
+=> END"
+metadata/dialogue_manager_version = "2.44.0"

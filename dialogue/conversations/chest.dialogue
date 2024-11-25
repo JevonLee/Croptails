@@ -1,0 +1,19 @@
+~ start_cow_box
+box: [[Hi|Hello]],你的动物似乎饿了！
+box: 你想喂你的牛吗？
+- yes: 
+	Kitty: 是的，它需要吃！
+	do GameDialogueManager.action_feed_animals()
+- No: 
+	Kitty: 不，我不想喂！
+=> END
+
+~ start_chicken_box
+box: [[Hi|Hello]],你的动物似乎饿了！
+box: 你想喂你的坤吗？
+- yes: 
+	Kitty: 是的，它需要吃坤饲料
+	do GameDialogueManager.action_feed_animals()
+- No: 
+	Kitty: 不，它只想打篮球！
+=> END

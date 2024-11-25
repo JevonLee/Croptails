@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnfksqd6l0v1n"]
+
+[ext_resource type="Script" path="res://Scenes/components/crops_cursor_component.gd" id="1_38twe"]
+
+[node name="CropsCursorComponent" type="Node" node_paths=PackedStringArray("tilled_soil")]
+script = ExtResource("1_38twe")
+tilled_soil = NodePath("")

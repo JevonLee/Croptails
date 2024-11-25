@@ -5,14 +5,17 @@ class_name FieldCursorComponent extends Node
 @export var terrain_set: int = 0 #tilemaplayer中的地形集合
 @export var terrain:int = 3 #我们绘制的泥土层的索引下标，在组件代码中我们选择不同的下标，就可以设置不同的tile在地图上
 
-@export var player:Player
-#@onready var player:Player = get_tree().get_first_node_in_group("player") #
+var player:Player  #@onready是在node准备好时赋值，当我们设置开始菜单为主场景时，应该是场景树加载完成时赋值
 
 var mouse_position:Vector2 #鼠标位置
 var cell_position:Vector2i #tile单元格坐标
 var cell_source_id:int #用于判断单元格下方是否有tile，-1则是没有
 var local_cell_position:Vector2 #单元格中心位置
 var distance:float
+
+func _ready() -> void:
+	await get_tree().physics_frame #
+	player = get_tree().get_first_node_in_group("player") #这里采用从组中获得玩家，是因为后期制作主场景时，玩家和这个节点不在同一个场景下
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("remove_hit"): #ctrl+left

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://vehin2cy0gju"]
+[gd_scene load_steps=21 format=3 uid="uid://vehin2cy0gju"]
 
 [ext_resource type="Theme" uid="uid://bvahw72yoclgl" path="res://Scenes/ui/game_ui_theme.tres" id="1_gfuy4"]
 [ext_resource type="Script" path="res://Scenes/ui/emotes_panel.gd" id="2_pyvwd"]
@@ -51,6 +51,14 @@ region = Rect2(0, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2deoa"]
 atlas = ExtResource("3_u5fxj")
 region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhho4"]
+atlas = ExtResource("3_u5fxj")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weqqn"]
+atlas = ExtResource("3_u5fxj")
+region = Rect2(32, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_42mep"]
 atlas = ExtResource("3_u5fxj")
@@ -120,6 +128,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_hhho4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weqqn")
+}],
+"loop": true,
+"name": &"emote_excited",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_42mep")
 }, {
 "duration": 1.0,
@@ -149,7 +168,7 @@ offset_bottom = 40.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Emote"]
 position = Vector2(25, 27)
 sprite_frames = SubResource("SpriteFrames_peetr")
-animation = &"emote_talking"
+animation = &"emote_excited"
 autoplay = "emote_1_idle"
 
 [node name="EmoteIdleTimer" type="Timer" parent="."]

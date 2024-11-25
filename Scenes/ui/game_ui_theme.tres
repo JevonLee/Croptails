@@ -216,6 +216,7 @@ MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
 ToolButton/base_type = &"Button"
+ToolButton/colors/font_disabled_color = Color(0.404511, 0.404511, 0.404511, 1)
 ToolButton/styles/disabled = SubResource("StyleBoxTexture_f2tfx")
 ToolButton/styles/focus = SubResource("StyleBoxTexture_dmy10")
 ToolButton/styles/hover = SubResource("StyleBoxTexture_aaljf")

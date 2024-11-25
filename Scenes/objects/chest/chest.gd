@@ -51,6 +51,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_tree().root.add_child(balloon)
 			balloon.start(load("res://dialogue/conversations/chest.dialogue"), dialogue_start_command)
 
+#存放物品到箱子里
 func on_feed_the_animals() -> void:
 	if in_range:
 		trigger_feed_harvest("corn", corn_harvest_scene)

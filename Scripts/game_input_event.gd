@@ -5,7 +5,6 @@ static var direction : Vector2 #静态变量可以让调用者也使用同一款
 static func movement_input() -> Vector2:
 	direction.y = Input.get_axis("walk_up","walk_down")
 	direction.x = Input.get_axis("walk_left","walk_right")
-	
 	#if Input.is_action_pressed("walk_up"):
 		#direction = Vector2.UP
 	#elif Input.is_action_pressed("walk_down"):

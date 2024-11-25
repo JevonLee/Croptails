@@ -25,7 +25,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_range:
 		if event.is_action_pressed("show_dialogue"):
 			var bolloon_instance :BaseGameDialogueBalloon= balloon.instantiate()
-			get_tree().current_scene.add_child(bolloon_instance)
+			get_tree().root.add_child(bolloon_instance)
 			bolloon_instance.start(load("res://dialogue/conversations/guide.dialogue"),"start")#加载对话脚本从start开始
 		
 func on_give_crop_seeds()->void:
