@@ -1,3 +1,6 @@
+Marker2D
+Node2D
+Timer
 AudioStreamPlayer2D
 SaveDataComponent
 TileMapLayer
@@ -9,7 +12,4 @@ CanvasLayer
 CollisionShape2D
 StaticBody2D
 Camera2D
-Node2D
 Area2D
-Marker2D
-AnimatedSprite2D

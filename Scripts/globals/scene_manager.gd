@@ -32,6 +32,7 @@ func load_level(level:String) -> void: #实现动态添加场景level
 		if nodes!=null:
 			for node: Node in nodes:
 				node.queue_free() #释放所有level关卡节点
-		await get_tree().physics_frame #等待旧节点释放完毕才添加动态场景，让存档时获取名称在添加新场景之前
+				
+		await get_tree().process_frame #等待旧节点释放完毕才添加动态场景，让存档时获取名称在添加新场景之前
 	
 	level_root.add_child(level_scene) #然后将实例化的场景添加到levelroot

@@ -26,4 +26,3 @@ vec4 replace_color(vec4 color){
 void fragment() {
 	COLOR=replace_color(texture(TEXTURE,UV));
 }
-

@@ -1,4 +1,4 @@
-res://audio/music/on_the_farm_music.tscn
+res://Scenes/main_scene.tscn
 res://Tilesets/house_tile_set.tres
 res://Scenes/objects/shake.gdshader
 res://Tilesets/game_tile_set.tres
@@ -7,12 +7,3 @@ res://Scenes/ui/zx_paml.tres
 res://Scenes/ui/game_ui_theme.tres
 res://Scenes/characters/guide/replace_color.gdshader
 res://resources/scene_data_resource.gd
-res://Scenes/main_scene.tscn
-res://Scenes/levels/level_2.tscn
-res://Scenes/characters/player/player.tscn
-res://Scenes/objects/chest/chest.tscn
-res://Scenes/ui/game_menu_screen.tscn
-res://Scenes/ui/tools_panel.tscn
-res://Scenes/test/test_scene_chicken.tscn
-res://Scenes/components/field_cursor_component.gd
-res://Scenes/components/crops_cursor_component.gd

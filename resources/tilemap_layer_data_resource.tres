@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dqrlumfcu0ma6"]
+[gd_resource type="Resource" script_class="TileMapLayerDataResource" load_steps=2 format=3 uid="uid://dqrlumfcu0ma6"]
 
 [ext_resource type="Script" path="res://resources/tilemap_layer_data_resource.gd" id="1_pysny"]
 

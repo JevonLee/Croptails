@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToolDataResource" load_steps=2 format=3 uid="uid://dnrlh2mhp5nhy"]
+
+[ext_resource type="Script" path="res://resources/tool_data_resource.gd" id="1_7q8v8"]
+
+[resource]
+script = ExtResource("1_7q8v8")
+isDisable = null
+a = null
+global_position = null
+node_path = null
+parent_node_path = null

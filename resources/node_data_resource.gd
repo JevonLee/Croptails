@@ -5,7 +5,7 @@ class_name NodeDataResource extends Resource
 @export var parent_node_path: NodePath
 
 #用于保存节点的位置，路径和父节点路径信息
-func _save_data(node: Node2D) -> void: #保存node的global_position和获得node对于场景树的路径，以及父节点路径
+func _save_data(node: Node2D) -> void: #这个node是save_data_component的父节点，保存node的global_position和获得node对于场景树的路径，以及父节点路径
 	global_position = node.global_position
 	node_path = node.get_path()
 	

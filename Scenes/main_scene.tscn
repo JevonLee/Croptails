@@ -24,6 +24,11 @@ metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="GameRoot/Player"]
 process_callback = 0
+limit_left = -290
+limit_top = 0
+limit_right = 1500
+limit_bottom = 1620
+limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
