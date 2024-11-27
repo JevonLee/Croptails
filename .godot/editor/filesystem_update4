@@ -7,3 +7,7 @@ res://Scenes/ui/zx_paml.tres
 res://Scenes/ui/game_ui_theme.tres
 res://Scenes/characters/guide/replace_color.gdshader
 res://resources/scene_data_resource.gd
+res://Scenes/levels/level_2.tscn
+res://Scenes/characters/player/player.tscn
+res://Scenes/ui/game_menu_screen.tscn
+res://Scenes/test/test_scene_chicken.tscn
